@@ -29,7 +29,7 @@ function addon:PLAYER_ENTERING_WORLD(event)
 
 	if(self.permision) then
 		-- Try to get a new token
-		SendAddonMessage(private.prefix, "GetToken", "GUILD")
+		SendAddonMessage(private.prefix, "~GetToken", "GUILD")
 	end
 
 	self:UnregisterEvent(event)
@@ -38,11 +38,11 @@ end
 function addon:CHAT_MSG_ADDON(prefix, msg, scope, sender)
 	if(prefix ~= private.prefix) then return end
 
-	if(msg == "GetToken") then
+	if(msg == "~GetToken") then
 		if(self.permision) then
-			SendAddonMessage(private.prefix, "AuthToken", "WHISPER", sender)
+			SendAddonMessage(private.prefix, "~AuthToken", "WHISPER", sender)
 		end
-	elseif(msg == "AuthToken") then
+	elseif(msg == "~AuthToken") then
 		private.token = tonumber(msg)
 	end
 end
