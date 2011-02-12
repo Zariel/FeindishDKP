@@ -1,0 +1,3 @@
+local parent, ns = ...
+ns.feindishdkp = CreateFrame("Frame")
+ns.private = {}
