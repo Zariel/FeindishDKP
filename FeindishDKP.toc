@@ -1,7 +1,11 @@
 ## Interface: 400000
 ## Author: Zariel
+## SavedVariables: FeindshDB
 
 init.lua
 private.lua
+db.lua
 
 core.lua
+
+finalize.lua
